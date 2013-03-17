@@ -20,5 +20,8 @@ You can install the library using [composer]('http://getcomposer.org/) by adding
     foreach ($reader as $log) {
         echo sprintf("The log entry was written at %s. \n", $log['date']->format('Y-m-d h:i:s'));
     }
+    
+    $lastLine = $reader[count($reader)-1];
+    echo sprintf("The last log entry was written at %s. \n", $lastLine['date']->format('Y-m-d h:i:s'));
 
 ```
