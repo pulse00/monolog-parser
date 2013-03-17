@@ -77,7 +77,7 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Coun
      */
     public function offsetSet($offset, $value)
     {
-
+        throw new \RuntimeException("LogReader is read-only.");
     }
 
     /**
@@ -85,7 +85,7 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Coun
      */
     public function offsetUnset($offset)
     {
-
+        throw new \RuntimeException("LogReader is read-only.");
     }
 
     /**

@@ -63,4 +63,15 @@ class LogReaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('aha', $lines[1]['logger']);
 
     }
+
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testException()
+    {
+        $file = __DIR__ . '/../../../../files/test.log';
+        $reader = new LogReader($file);
+        $reader[5] = 'foo';
+
+    }
 }
