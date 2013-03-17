@@ -16,7 +16,7 @@ use Dubture\Monolog\Reader\AbstractReader;
 /**
  * @author Robert Gruendler <r.gruendler@gmail.com>
  */
-class LogReader extends AbstractReader implements \Iterator, \ArrayAccess
+class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Countable
 {
     /**
      * @var \SplFileObject
@@ -27,11 +27,6 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess
      * @var integer
      */
     protected $lineCount;
-
-    /**
-     * @var integer
-     */
-    protected $key;
 
     /**
      * @var \Dubture\Monolog\Parser\LogParserInterface
@@ -52,7 +47,6 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess
         }
 
         $this->lineCount = $i;
-        $this->key = 0;
         $this->parser = $this->getDefaultParser();
     }
 
@@ -69,9 +63,13 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess
      */
     public function offsetGet($offset)
     {
+        $key = $this->file->key();
         $this->file->seek($offset);
-        $this->key = $offset;
-        return $this->parser->parse($this->file->current());
+        $log = $this->current();
+        $this->file->seek($key);
+        $this->file->current();
+
+        return $log;
     }
 
     /**
@@ -95,7 +93,6 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess
      */
     public function rewind()
     {
-        $this->key = 0;
         $this->file->rewind();
     }
 
@@ -120,7 +117,7 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess
      */
     public function key()
     {
-        $this->key++;
+        return $this->file->key();
     }
 
     /**
@@ -129,5 +126,13 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess
     public function valid()
     {
         return $this->file->valid();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function count()
+    {
+        return $this->lineCount;
     }
 }

@@ -41,6 +41,26 @@ class LogReaderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('foobar', $log['message']);
         $this->assertArrayNotHasKey('foo', $log['context']);
 
+    }
+
+    public function testIterator()
+    {
+        $file = __DIR__ . '/../../../../files/test.log';
+        $reader = new LogReader($file);
+        $lines = array();
+        $keys = array();
+
+        $this->assertEquals(2, count($reader));
+
+        foreach ($reader as $i => $log) {
+            $test = $reader[0];
+            $lines[] = $log;
+            $keys[] = $i;
+        }
+
+        $this->assertEquals(array(0, 1), $keys);
+        $this->assertEquals('test', $lines[0]['logger']);
+        $this->assertEquals('aha', $lines[1]['logger']);
 
     }
 }
