@@ -2,7 +2,7 @@
     "name": "pulse00/monolog-parser",
     "description": "A parser for monolog log entries",
     "require": {
-        "monolog/monolog": "dev-master"
+        "monolog/monolog": "1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*"
