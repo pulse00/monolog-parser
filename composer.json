@@ -1,5 +1,5 @@
 {
-    "name": "hugoseabra/monolog-parser",
+    "name": "pulse00/monolog-parser",
     "description": "A parser for monolog log entries",
     "require": {
         "monolog/monolog": "1.*"
