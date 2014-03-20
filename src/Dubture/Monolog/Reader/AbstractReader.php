@@ -18,11 +18,22 @@ use Dubture\Monolog\Parser\LineLogParser;
  */
 class AbstractReader
 {
+    protected $defaultParserPattern;
+    
+    /**
+     * Constructor
+     * @param string $defaultParserPattern
+     */
+    public function __construct($defaultParserPattern)
+    {
+        $this->defaultParserPattern = $defaultParserPattern;
+    }
+    
     /**
      * @return \Dubture\Monolog\Parser\LineLogParser
      */
     protected function getDefaultParser()
     {
-        return new LineLogParser();
+        return new LineLogParser($this->defaultParserPattern);
     }
 }

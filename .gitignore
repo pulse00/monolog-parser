@@ -5,3 +5,4 @@ composer.phar
 .settings
 .project
 bin
+/nbproject/*
