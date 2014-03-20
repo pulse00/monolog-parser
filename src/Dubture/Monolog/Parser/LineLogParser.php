@@ -14,7 +14,16 @@ namespace Dubture\Monolog\Parser;
 class LineLogParser implements LogParserInterface
 {
     protected $pattern = '/\[(?P<date>.*)\] (?P<logger>\w+).(?P<level>\w+): (?P<message>[^ ]+) (?P<context>[^ ]+) (?P<extra>[^ ]+)/';
-
+    
+    /**
+     * Constructor
+     * @param string $pattern
+     */
+    public function __construct($pattern = null)
+    {
+        $this->pattern = ($pattern) ?: $this->pattern;
+    }
+    
     /**
      * {@inheritdoc}
      */

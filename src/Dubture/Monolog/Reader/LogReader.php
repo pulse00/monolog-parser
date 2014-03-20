@@ -36,8 +36,10 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Coun
     /**
      * @param string $file
      */
-    public function __construct($file)
+    public function __construct($file, $defaultPatternPattern = null)
     {
+        parent::__construct($defaultPatternPattern);
+        
         $this->file = new \SplFileObject($file, 'r');
         $i = 0;
         while (!$this->file->eof()) {
