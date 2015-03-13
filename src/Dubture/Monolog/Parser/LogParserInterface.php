@@ -12,8 +12,8 @@
 namespace Dubture\Monolog\Parser;
 
 /**
- *
- * @author Robert Gruendler <r.gruendler@gmail.com>
+ * Interface LogParserInterface
+ * @package Dubture\Monolog\Parser
  */
 interface LogParserInterface
 {

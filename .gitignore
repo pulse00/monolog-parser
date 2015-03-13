@@ -1,8 +1,10 @@
 .DS_Store
 vendor
 composer.phar
+composer.lock
 .buildpath
 .settings
 .project
 bin
 /nbproject/*
+*.iml

@@ -14,15 +14,16 @@ namespace Dubture\Monolog\Reader;
 use Dubture\Monolog\Parser\LineLogParser;
 
 /**
- * @author Robert Gruendler <r.gruendler@gmail.com>
+ * Class AbstractReader
+ * @package Dubture\Monolog\Reader
  */
 class AbstractReader
 {
+    /** @var  string */
     protected $defaultParserPattern;
-    
+
     /**
-     * Constructor
-     * @param string $defaultParserPattern
+     * @param $defaultParserPattern
      */
     public function __construct($defaultParserPattern)
     {

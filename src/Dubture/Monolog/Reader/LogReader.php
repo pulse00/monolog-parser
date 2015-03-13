@@ -14,7 +14,8 @@ namespace Dubture\Monolog\Reader;
 use Dubture\Monolog\Reader\AbstractReader;
 
 /**
- * @author Robert Gruendler <r.gruendler@gmail.com>
+ * Class LogReader
+ * @package Dubture\Monolog\Reader
  */
 class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Countable
 {
@@ -34,7 +35,8 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Coun
     protected $parser;
 
     /**
-     * @param string $file
+     * @param $file
+     * @param null $defaultPatternPattern
      */
     public function __construct($file, $defaultPatternPattern = null)
     {

@@ -14,7 +14,8 @@ namespace Dubture\Monolog\Reader\Test;
 use Dubture\Monolog\Parser\LineLogParser;
 
 /**
- * @author Robert Gruendler <r.gruendler@gmail.com>
+ * Class ParserTest
+ * @package Dubture\Monolog\Reader\Test
  */
 class ParserTest extends \PHPUnit_Framework_TestCase
 {

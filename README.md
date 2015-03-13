@@ -1,6 +1,9 @@
 Monolog Parser
 ==============
 
+[![Build Status](https://travis-ci.org/pulse00/monolog-parser.svg?branch=master)](https://travis-ci.org/pulse00/monolog-parser)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/pulse00/monolog-parser/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/pulse00/monolog-parser/?branch=master)
+
 A simple library for parsing [monolog](https://github.com/Seldaek/monolog) logfiles.
 
 ## Installation

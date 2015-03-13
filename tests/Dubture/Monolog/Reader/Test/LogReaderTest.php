@@ -14,9 +14,9 @@ namespace Dubture\Monolog\Reader\Test;
 use Dubture\Monolog\Reader\ReverseLogReader;
 use Dubture\Monolog\Reader\LogReader;
 
-
 /**
- * @author Robert Gruendler <r.gruendler@gmail.com>
+ * Class LogReaderTest
+ * @package Dubture\Monolog\Reader\Test
  */
 class LogReaderTest extends \PHPUnit_Framework_TestCase
 {
