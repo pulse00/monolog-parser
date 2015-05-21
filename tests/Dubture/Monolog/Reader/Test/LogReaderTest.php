@@ -45,10 +45,17 @@ class LogReaderTest extends \PHPUnit_Framework_TestCase
 
     public function testIterator()
     {
+        // the test.log file contains 2 log lines
         $file = __DIR__ . '/../../../../files/test.log';
         $reader = new LogReader($file);
         $lines = array();
         $keys = array();
+
+        $this->assertTrue($reader->offsetExists(0));
+        $this->assertTrue($reader->offsetExists(1));
+
+        $this->assertFalse($reader->offsetExists(2));
+        $this->assertFalse($reader->offsetExists(3));
 
         $this->assertEquals(2, count($reader));
 
