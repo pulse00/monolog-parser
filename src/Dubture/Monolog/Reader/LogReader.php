@@ -10,8 +10,7 @@
  */
 
 namespace Dubture\Monolog\Reader;
-
-use Dubture\Monolog\Reader\AbstractReader;
+use Dubture\Monolog\Parser\LogParserInterface;
 
 /**
  * Class LogReader
@@ -30,7 +29,7 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Coun
     protected $lineCount;
 
     /**
-     * @var \Dubture\Monolog\Parser\LogParserInterface
+     * @var LogParserInterface
      */
     protected $parser;
 
@@ -53,6 +52,17 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Coun
         $this->lineCount = $i;
         $this->parser = $this->getDefaultParser();
     }
+
+	/**
+	 * @param LogParserInterface $parser
+	 * @return $this
+	 */
+	public function setParser(LogParserInterface $parser)
+	{
+		$this->parser = $parser;
+
+		return $this;
+	}
 
     /**
      * {@inheritdoc}

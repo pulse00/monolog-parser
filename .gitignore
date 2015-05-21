@@ -8,3 +8,4 @@ composer.lock
 bin
 /nbproject/*
 *.iml
+.idea
