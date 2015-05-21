@@ -69,7 +69,7 @@ class LogReader extends AbstractReader implements \Iterator, \ArrayAccess, \Coun
      */
     public function offsetExists($offset)
     {
-        return $this->lineCount < $offset;
+        return $this->lineCount >= $offset;
     }
 
     /**
