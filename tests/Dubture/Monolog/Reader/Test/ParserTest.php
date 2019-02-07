@@ -12,12 +12,13 @@
 namespace Dubture\Monolog\Reader\Test;
 
 use Dubture\Monolog\Parser\LineLogParser;
+use PHPUnit;
 
 /**
  * Class ParserTest
  * @package Dubture\Monolog\Reader\Test
  */
-class ParserTest extends \PHPUnit_Framework_TestCase
+class ParserTest extends PHPUnit\Framework\TestCase
 {
     public function testLineFormatter()
     {

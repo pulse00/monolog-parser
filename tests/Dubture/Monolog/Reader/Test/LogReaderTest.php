@@ -11,14 +11,14 @@
 
 namespace Dubture\Monolog\Reader\Test;
 
-use Dubture\Monolog\Reader\ReverseLogReader;
 use Dubture\Monolog\Reader\LogReader;
+use PHPUnit;
 
 /**
  * Class LogReaderTest
  * @package Dubture\Monolog\Reader\Test
  */
-class LogReaderTest extends \PHPUnit_Framework_TestCase
+class LogReaderTest extends PHPUnit\Framework\TestCase
 {
     public function testReader()
     {
